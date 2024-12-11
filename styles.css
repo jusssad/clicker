@@ -1,0 +1,375 @@
+/* Изменение стиля вкладок для размещения в одной линии сверху экрана и уменьшение размеров */
+
+@font-face {
+    font-family: 'TeletactileRus';
+    src: url('shrift/TeletactileRus.ttf') format('truetype');
+}
+
+body {
+    background: url('images/background/pc.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'TeletactileRus', sans-serif; /* Применение шрифта ко всему тексту */
+}
+
+.tabs {
+    display: flex;
+    justify-content: flex-start; /* Минимальное расстояние между вкладками */
+    gap: 140px; /* Минимальный отступ между элементами */
+    align-items: center;
+    padding: 10px 0;
+}
+
+.tab {
+    flex: none;
+}
+
+.tab-icon {
+    width: 150px; /* Увеличение ширины в полтора раза */
+    height: 50px; /* Увеличение высоты в полтора раза */
+}
+
+.energy-icon {
+    width: 150px;
+    height: 50px;
+}
+
+/* Центрирование контейнера под энергией */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.click-image {
+    width: 400px; /* Увеличение ширины в два раза */
+    height: 400px; /* Увеличение высоты в два раза */
+    cursor: pointer;
+    position: absolute;
+    top: 50%; /* Положение по вертикали */
+    left: 50%; /* Положение по горизонтали */
+    transform: translate(-50%, -50%); /* Центрирование по экрану */
+}
+
+/* Центрирование очков внизу экрана и добавление фонового изображения */
+.score-container {
+    position: absolute;
+    bottom: 20px; /* Расстояние от нижнего края экрана */
+    left: 50%;
+    transform: translateX(-50%); /* Центрирование по горизонтали */
+    width: 200px; /* Ширина контейнера */
+    height: 50px; /* Высота контейнера */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px; /* Настройка размера шрифта */
+    color: #fff; /* Цвет текста */
+    background: url('images/interface/minifon.png') no-repeat center center;
+    background-size: contain; /* Масштабирование фонового изображения */
+    border-radius: 10px; /* Закругленные углы для красоты */
+    text-align: center;
+}
+
+.energy-notification {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px; /* Ширина уведомления */
+    height: 400px; /* Высота подстраивается под текст */
+    background: url('images/interface/fon.png') no-repeat center center;
+    background-size: contain;
+    color: #fff; /* Цвет текста */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'TeletactileRus', sans-serif;
+    border-radius: 10px; /* Закругленные углы */
+    z-index: 10; /* Поверх всех элементов */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0,); /* Тень для выделения */
+    padding: 20px; /* Отступы внутри уведомления */
+    line-height: 1.5; /* Межстрочный интервал */
+    overflow: hidden; /* Убираем прокрутку */
+}
+
+
+.black-market {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.restore-energy-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'TeletactileRus', sans-serif;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.math-problem {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.settings {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px; /* Увеличенная ширина */
+    height: 400px; /* Увеличенная высота */
+    background: url('images/interface/fon.png') no-repeat center center;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px; /* Закругленные углы */
+    z-index: 10; /* Поверх всех элементов */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0,); /* Тень для выделения */
+}
+
+#sound-toggle-btn {
+    width: 150px; /* Ширина изображения кнопки */
+    height: 150px; /* Высота изображения кнопки */
+    background: url('images/settings/включенный.png') no-repeat center center; /* По умолчанию включенный */
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+}
+
+#sound-toggle-btn.sound-off {
+    background: url('images/settings/выключенный.png') no-repeat center center; /* Фон для выключенного состояния */
+    background-size: contain;
+}
+
+.black-market-notification {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px; /* Ширина уведомления */
+    height: 400px; /* Высота подстраивается под текст */
+    background: url('images/interface/fon.png') no-repeat center center;
+    background-size: contain;
+    color: #fff; /* Цвет текста */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'TeletactileRus', sans-serif;
+    border-radius: 10px; /* Закругленные углы */
+    z-index: 10; /* Поверх всех элементов */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0,); /* Тень для выделения */
+    padding: 20px; /* Отступы внутри уведомления */
+    line-height: 1.5; /* Межстрочный интервал */
+    overflow: hidden; /* Убираем прокрутку */
+}
+
+.task-option {
+    width: 400px; /* Ширина блока */
+    height: 150px; /* Высота блока */
+    background: url('images/interface/minifon.png') no-repeat center center;
+    background-size: contain;
+    color: #fff; /* Цвет текста */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 20px; /* Размер шрифта */
+    font-family: 'TeletactileRus', sans-serif;
+    border: none; /* Убираем границу */
+    outline: none; /* Убираем обводку при фокусе */
+    box-shadow: none; /* Убираем тень */
+    cursor: pointer; /* Указываем, что элемент кликабельный */
+    margin: 10px 0; /* Отступ между блоками */
+    line-height: 1.5; /* Межстрочный интервал */
+}
+
+.task-option:focus {
+    outline: none; /* Убираем обводку при фокусе */
+    box-shadow: none; /* Убираем тень при фокусе */
+}
+
+.task-option:hover {
+    transform: scale(1.05); /* Немного увеличиваем элемент при наведении */
+    box-shadow: none; /* Убираем тень при наведении */
+}
+
+
+.task-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px; /* Ширина контейнера */
+    height: 400px; /* Высота контейнера */
+    background: url('images/interface/fon.png') no-repeat center center;
+    background-size: contain;
+    color: #fff; /* Белый цвет текста */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 20px; /* Размер шрифта */
+    font-family: 'TeletactileRus', sans-serif;
+    border-radius: 10px; /* Закругленные углы */
+    z-index: 10; /* Поверх всех элементов */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0,); /* Тень для выделения */
+    padding: 20px; /* Отступы внутри контейнера */
+    line-height: 1.5; /* Межстрочный интервал */
+    overflow: hidden; /* Убираем прокрутку */
+}
+
+
+.task-input {
+    width: 400px;
+    height: 50px;
+    background: url('images/interface/minifon.png') no-repeat center center;
+    background-size: contain;
+    color: #000; /* Черный текст */
+    font-size: 18px;
+    font-family: 'TeletactileRus', sans-serif;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.task-input:focus {
+    outline: none;
+}
+
+.task-button {
+    width: 200px; /* Ширина кнопки */
+    height: 50px; /* Высота кнопки */
+    background: url('images/interface/minifon.png') no-repeat center center; /* Фон с изображением minifon */
+    background-size: contain; /* Подгонка изображения под размеры кнопки */
+    color: white; /* Белый цвет текста */
+    font-size: 18px;
+    font-family: 'TeletactileRus', sans-serif;
+    text-align: center;
+    border: none; /* Убираем рамку */
+    border-radius: 10px; /* Закругленные углы */
+    cursor: pointer; /* Курсор в виде указателя */
+    margin-top: 20px; /* Отступ сверху */
+    line-height: 1.5; /* Межстрочный интервал */
+    box-shadow: none; /* Убираем тень */
+}
+
+
+.shop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    color: white;
+    font-family: 'TeletactileRus', sans-serif;
+}
+
+.upgrade {
+    width: 600px; /* Ширина улучшения */
+    height: 200px; /* Высота улучшения */
+    margin: 15px 0;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s;
+    overflow: hidden; /* Убираем лишние части */
+}
+
+.upgrade:hover {
+    transform: scale(1.05);
+}
+
+.upgrade-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upgrade-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Полное отображение изображения */
+}
+
+.upgrade-text {
+    position: absolute;
+    top: 10%; /* Смещение текста вверх */
+    left: 60%; /* Смещение текста вправо */
+    width: 35%; /* Оставляем место для текста */
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: white;
+    text-align: left;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.upgrade-text h3 {
+    font-size: 16px; /* Уменьшенный размер заголовка */
+    margin-bottom: 5px;
+}
+
+.upgrade-text p {
+    font-size: 14px; /* Уменьшенный размер текста */
+    margin: 2px 0;
+    line-height: 1.2; /* Межстрочный интервал */
+    overflow: hidden; /* Ограничиваем длину текста */
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+
+.upgrade-notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'TeletactileRus', sans-serif;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    animation: fadeInOut 3s;
+}
+
+.upgrade-notification.success {
+    background-color: rgba(0, 128, 0, 0.8); /* Зеленый цвет для успешной покупки */
+}
+
+.upgrade-notification.error {
+    background-color: rgba(255, 0, 0, 0.8); /* Красный цвет для ошибки */
+}
+
+@keyframes fadeInOut {
+    0%, 90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="tabs">
+        <a href="#" class="tab" onclick="goToSettings()">
+            <img src="images/button/настройки.png" alt="Settings" class="tab-icon">
+        </a>
+        <a href="#" class="tab" onclick="goToBlackMarket()">
+            <img src="images/button/черный рынок.png" alt="Black Market" class="tab-icon">
+        </a>
+        <a href="#" class="tab">
+            <img src="images/button/ачивки.png" alt="Achievements" class="tab-icon">
+        </a>
+        <img src="images/energy/100.png" alt="Energy" class="energy-icon">
+        <a href="#" class="tab" onclick="goToShop()">
+            <img src="images/button/магазин.png" alt="Shop" class="tab-icon">
+        </a>
+        <a href="#" class="tab">
+            <img src="images/button/улучшения.png" alt="Upgrades" class="tab-icon">
+        </a>
+        <a href="#" class="tab" onclick="goToGame()">
+            <img src="images/button/игра.png" alt="Game" class="tab-icon">
+        </a>
+    </nav>
+    <div class="container">
+        <img src="images/skins/defolt.pikmi/pikmi.png" alt="Click Me" class="click-image" onclick="game.incrementScore()">
+    </div>
+    <div class="score-container">
+        <div class="score">Score: <span id="score">0</span></div>
+    </div>
+    <!-- Подключение файлов задач -->
+    <script src="database/examples.js"></script>
+    <script src="database/grammar.js"></script>
+    <script src="database/logic.js"></script>
+    <script src="database/classUpgrade.js"></script>
+    <!-- Подключение основного файла скрипта -->
+    <script src="script.js"></script>
+</body>
+</html>
